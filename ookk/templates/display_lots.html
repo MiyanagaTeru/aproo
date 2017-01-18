@@ -1,0 +1,16 @@
+
+<html>
+
+{% load static %}
+
+  welcome you!!!!{{pp.subject}}{{pp.content }}
+  
+  {{pp.get_bbs_display}}
+  
+  {% if pp.pimageA %}
+  <img src="{{ pp.pimageA.url|default_if_none:'#'}}"  height="200"  width="300"> 
+  {% endif %}
+
+   
+
+</html>

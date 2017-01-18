@@ -1,0 +1,19 @@
+<html>
+{% csrf_token %}
+{% load static %}
+{% csrf_token %}
+
+
+标题：{{pp.subject}}
+<img src="{{pp.pimageA.url }}"  height="200"  width="300">
+正文：{{pp.content}}
+
+帖子阅读：{{pp.counter}}
+{{pub.advtext}}
+<img src="{{pub.advimage.url }}"  height="200"  width="300">
+
+广告曝光：{{pub.advcounter}}
+<a href="/comein/"><img src="/media/static/linyun.jpg"  height="150"  width="300"></a>
+
+
+</html>

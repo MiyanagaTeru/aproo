@@ -1,0 +1,30 @@
+
+# -*- coding: utf-8 -*-
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+
+{% csrf_token %}
+    {{porm}}  
+
+<form method="post" action="">
+    {{ pormsett.management_form }}
+    {% for form in pormsett %}
+        {% for field in form %}
+            {{ field.label_tag }} {{ field }}
+        {% endfor %}
+    {% endfor %}
+</form>
+
+
+
+
+
+
+<form method="post" action="">
+    {{ pormsett.management_form }}
+    {% for form in pormsett %}
+        {{ form }}
+    {% endfor %}
+</form>
+  

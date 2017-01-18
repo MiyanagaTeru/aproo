@@ -1,0 +1,24 @@
+<html>
+<head>
+  <link rel='stylesheet' type='text/css' href='media/styles/main.css' />
+</head>
+<body>
+
+  <div class='newPub'>
+    <h2>天天向上</h2>
+    <div>
+      {% for qs in queryset %}
+        <div class="brief">
+          <h4 class='briefTitle'>{{qs.subject}}</h4>
+          <div class='toRight'>
+            <div class='briefTime'>{{qs.pubdate|date:'n-j'}}</div>
+            <form class='actions' action='/readcontent/' method='GET'>
+              <input type='hidden' name='pkk' value={{qs.pk}}>
+              <input class='viewContent' type='submit' value='查看全文'>
+            </form>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+  </div>
+</body>

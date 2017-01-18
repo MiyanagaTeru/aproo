@@ -1,0 +1,10 @@
+<html>
+{% csrf_token %}
+{% load static %}
+
+{{ap.user.username}}
+{{ap.advtext}}
+
+<img src="{{ap.advimage.url }}"  height="200"  width="300">
+
+</html>

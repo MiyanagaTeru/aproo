@@ -1,0 +1,8 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+<form action="/pormsett_show/" method="post">
+    {% csrf_token %}
+    {{pormsett}}
+    <input type="submit" value="OK">
+</form>

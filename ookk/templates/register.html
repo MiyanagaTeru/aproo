@@ -1,0 +1,8 @@
+
+<form action="/readgetname/" method="post">
+    {% csrf_token %}
+    <label for="your_name">Your name: </label>
+    <input id="your_name" type="text" name="your_name" value="{{ username }}">
+    <input id="your_age" type="text" name="your_pass" value="{{password}}">
+    <input type="submit" value="register">
+</form>

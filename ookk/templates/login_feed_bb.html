@@ -1,0 +1,21 @@
+<html>
+<head>
+  <link rel='stylesheet' type='text/css' href='/media/styles/main.css' />
+</head>
+已注册用户在此登录
+<body>
+  <div class='form'>
+    <form action=/login_view/ method='post'>
+      <label class='inputLabel'>
+        <span>用户名：</span>
+        <input type='text' name='username' onkeyup="value=value.replace(/[W]/g,'')" onkeydown="if(event.keyCode==13)event.keyCode=9"  maxlength="20">
+      </label>
+      <label class='inputLabel'>
+        <span class='inputLabel'>密  码：</span>
+        <input type='password' name='password' onkeyup="value=value.replace(/[W]/g,'')" onkeydown="if(event.keyCode==13)event.keyCode=9"  maxlength="20">
+      </label>
+      <input class='submitButton' type='submit' value='提交'>
+    </form>
+  </div>
+</body>
+</html>

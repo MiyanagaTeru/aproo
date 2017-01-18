@@ -1,0 +1,12 @@
+<html>
+已注册用户在此登录
+<form action=/login_r_view/   method='GET'>
+  用户名<input type='text' name='username' onkeyup="value=value.replace(/[W]/g,'')" onkeydown="if(event.keyCode==13)event.keyCode=9" style="ime-mode:disabled" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^d]/g,''))"  maxlength="20" />
+  密  码<input type='password' name='password' onkeyup="value=value.replace(/[W]/g,'')" onkeydown="if(event.keyCode==13)event.keyCode=9" style="ime-mode:disabled" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^d]/g,''))"  maxlength="20" />
+
+  <input type="hidden" name="pk" value="{{ pkk }}">
+  <input type='submit' value='提交'>
+</form>
+
+
+</html>

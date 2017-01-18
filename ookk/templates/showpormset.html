@@ -1,0 +1,25 @@
+
+    {% csrf_token %}
+   
+
+<form method="post" action="">
+    {{ pormset.management_form }}
+    {% for form in pormset %}
+        {% for field in form %}
+            {{ field.label_tag }} {{ field }}
+        {% endfor %}
+    {% endfor %}
+</form>
+
+
+
+
+
+
+<form method="post" action="">
+    {{ pormset.management_form }}
+    {% for form in pormset %}
+        {{ form }}
+    {% endfor %}
+</form>
+  

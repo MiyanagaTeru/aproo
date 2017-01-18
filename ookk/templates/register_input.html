@@ -1,0 +1,9 @@
+
+新用户在此注册
+<form action="/register_read/" method="post">
+    {% csrf_token %}
+    <label for="your_name">Your name: </label>
+    <input id="username" type="text" name="username" value="{{ username }}">
+    <input id="password" type="text" name="password" value="{{password}}">
+    <input type="submit" value="register">
+</form>

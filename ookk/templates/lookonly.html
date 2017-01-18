@@ -1,0 +1,18 @@
+<html>
+{% csrf_token %}
+{% load static %}
+{% csrf_token %}
+{% for aff in ff %}
+标题：{{aff.subject}}
+正文：{{aff.content}}
+阅读次数：{{aff.counter}}
+发布时间：{{aff.pubdate}}
+
+<img src="{{aff.pimageA.url }}"  height="200"  width="300">
+
+{% endfor %}
+
+
+
+
+</html>

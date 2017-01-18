@@ -1,0 +1,68 @@
+<html>
+<head>
+  <link rel='stylesheet' type='text/css' href='media/styles/main.css' />
+</head>
+<body>
+  <div class='header'>
+    <span class='welcome'>欢迎你!  {{u}}</span>
+    <nav class='navigation'>
+      <a href="/uploadonly/"><input type="button" value="发布新帖" action="uploadonly"></a>
+      <a href="/loginq/"><input type="button" value="登 录" action="loginq"></a>
+      <a href="/uppublisher/"><input type="button" value="上传个人资料" action="uppublisher"></a>
+      <a href="/register_feed/"><input type="button" value="用户注册" action="register_feed"></a>
+      <a href="/logout_view/"><input type="button" value="登 出" action="logout_view"></a>
+      <a href="/guide/"><input type='button' value='用户指南' action="guide"></a>
+    </nav>
+  </div>
+  <div class='newPub'>
+    <h2>最新发布</h2>
+    <div>
+      {% for qs in queryset %}
+        <div class="brief">
+          <h4 class='briefTitle'>{{qs.subject}}</h4>
+          <div class='toRight'>
+            <div class='briefTime'>{{qs.pubdate|date:'n-j'}}</div>
+            <form class='actions' action='/readcontent/' method='GET'>
+              <input type='hidden' name='pkk' value={{qs.pk}}>
+              <input class='viewContent' type='submit' value='查看全文'>
+            </form>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+  </div>
+  <div class='board'>
+    <h2>排行榜</h2>
+    <div>
+      {% for ts in topset %}
+      <div class='brief'>
+        <h4 class='briefTitle'>{{ts.subject}}</h4>
+        <div class='toRight'>
+          <div class='briefTime'>{{ts.pubdate|date:'n-j'}}</div>
+          <form class='actions' action='/readcontent/' method='GET'>
+            <input type='hidden' name='pkk' value={{ts.pk}}>
+            <input class='viewContent' type='submit' value='查看全文'>
+          </form>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</body>
+</html>
+
+<a href="/comein_more1/">更多最新发布</a>
+<a href="/comein_more2/">更多排行榜内容</a>
+<a href="/c_rdht/">热点话题</a>
+<a href="/c_txds/">天下大势</a>
+<a href="/c_ylbg/">娱乐八卦</a>
+<a href="/c_shzh/">生活智慧</a>
+<a href="/c_ttxs/">天天向上</a>
+<a href="/c_tglj/">谈古论今</a>
+<a href="/c_jtgw/">鸡汤感悟</a>
+<a href="/c_jsxx/">健身休闲</a>
+<form action="/search/"  method="GET">
+  搜索<input type="text" name="subject"/>
+
+<input type="submit" value="ok"/>
+</form>

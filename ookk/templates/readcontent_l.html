@@ -1,0 +1,22 @@
+<html>
+<head>
+  <link rel='stylesheet' type='text/css' href='media/styles/main.css' />
+</head>
+<body>
+{% csrf_token %}
+{% load static %}
+{% csrf_token %}
+
+  <h3 class='subject'>{{aff.subject}}</h3>
+  <div class='content'>{{aff.content}}</content>
+  <div class='counter'>{{aff.counter}}</div>
+
+  <img src="{{aff.pimageA.url }}"  height="200"  width="300">
+
+
+  <form action="/release/"  method="GET">
+    <input type="hidden" name="pk" value="{{ pkk }}">
+    <input type="submit" value="私人定制发布"/>
+  </form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+<head>
+  <link rel='stylesheet' type='text/css' href='media/styles/main.css' />
+</head>
+
+<div class='board'>
+  <h2>更多排行榜内容</h2>
+  <div>
+    {% for ts in topset %}
+    <div class='brief'>
+      <h4 class='briefTitle'>{{ts.subject}}</h4>
+      <div class='toRight'>
+        <div class='briefTime'>{{ts.pubdate|date:'n-j'}}</div>
+        <form class='actions' action='/readcontent/' method='GET'>
+          <input type='hidden' name='pkk' value={{ts.pk}}>
+          <input class='viewContent' type='submit' value='查看全文'>
+        </form>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+欢迎你将自己喜爱的精彩段子上传发布到本网站

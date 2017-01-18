@@ -1,0 +1,25 @@
+<html>
+
+{% csrf_token %}
+<form action="/lookonly/" enctype="multipart/form-data"  method="POST">
+
+标题<input type="text" name="subject" maxlength="100" />
+正文<input type="text" name="content" maxlength="999" />
+
+类别<select name="bbs">
+      <option value="RDHT">热点话题</option>
+      <option value="TXDS">天下大势</option>
+      <option value="SHZH">生活智慧</option>
+      <option value="TTXS">天天向上</option>
+      <option value="YLBG">娱乐八卦</option>
+      <option value="TGLJ">谈古论今</option>
+      <option value="JSXX">健身休闲</option>
+      <option value="JTGW">鸡汤感悟</option>
+
+   </select>
+  图片<input type="file" name="pimageA"/>
+<input type="submit" value="ok"/>
+</form>
+
+
+</html>
