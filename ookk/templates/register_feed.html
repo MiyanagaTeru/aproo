@@ -10,18 +10,51 @@
   }
   </script>
 </head>
-新用户在此注册
+
 <body>
   {% csrf_token %}
   <div class='form'>
+    <h3>新用户在此注册</h3>
+    （用户名和密码只能用英文字母和数字组成，且必须以英文字母开头）
     <form action="/userRegister/" method='POST' onSubmit=" return validateForm()" >
-    用户名<input type='text' name='username' onkeyup="value=value.replace(/[W]/g,'')" onkeydown="if(event.keyCode==13)event.keyCode=9" style="ime-mode:disabled"   maxlength="20" />
-    密  码<input type='password' name='password' onkeyup="value=value.replace(/[W]/g,'')" onkeydown="if(event.keyCode==13)event.keyCode=9" style="ime-mode:disabled"   maxlength="20" />
-    密码确认<input type='password' name='password2'  onkeyup="value=value.replace(/[W]/g,'')" onkeydown="if(event.keyCode==13)event.keyCode=9"  style="ime-mode:disabled"  maxlength="20" />
+      <label class='inputLabel'>
+        <span>用户名</span>
+        <input
+          type='text'
+          name='username'
+          onkeyup="value=value.replace(/[W]/g,'')"
+          onkeydown="if(event.keyCode==13)event.keyCode=9"
+          style="ime-mode:disabled"
+          maxlength="20"
+        />
+      </label>
 
-    <input class='submitButton' type='submit' value='ok'/>
+      <label class='inputLabel'>
+        <span>密  码</span>
+        <input
+          type='password'
+          name='password'
+          onkeyup="value=value.replace(/[W]/g,'')"
+          onkeydown="if(event.keyCode==13)event.keyCode=9"
+          style="ime-mode:disabled"
+          maxlength="20"
+        />
+      </label>
+
+      <label class='inputLabel'>
+        <span>密码确认</span>
+        <input
+          type='password'
+          name='password2'
+          onkeyup="value=value.replace(/[W]/g,'')"
+          onkeydown="if(event.keyCode==13)event.keyCode=9"
+          style="ime-mode:disabled"
+          maxlength="20"
+        />
+      </label>
+
+      <input class='submitButton' type='submit' value='ok'/>
     </form>
   </div>
 </body>
-（用户名和密码只能用英文字母和数字组成，且必须以英文字母开头）
 </html>

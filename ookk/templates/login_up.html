@@ -13,12 +13,32 @@
 <body>
   {% csrf_token %}
   <div class='form'>
-    上传用户资料需注册用户先行登录：
+    <h3>上传用户资料需注册用户先行登录：</h3>
     <form action="/login_up_view/" method='POST' onSubmit=" return validateForm()" >
-    用户名<input type='text' name='username' onkeyup="value=value.replace(/[W]/g,'')" onkeydown="if(event.keyCode==13)event.keyCode=9" style="ime-mode:disabled"   maxlength="20" />
-    密  码<input type='password' name='password' onkeyup="value=value.replace(/[W]/g,'')" onkeydown="if(event.keyCode==13)event.keyCode=9" style="ime-mode:disabled"   maxlength="20" />
+      <label class='inputLabel'>
+        <span>用户名</span>
+        <input
+          type='text'
+          name='username'
+          onkeyup="value=value.replace(/[W]/g,'')"
+          onkeydown="if(event.keyCode==13)event.keyCode=9"
+          style="ime-mode:disabled"
+          maxlength="20"
+        />
+      </label>
+      <label class='inputLabel'>
+        <span>密  码</span>
+        <input
+          type='password'
+          name='password'
+          onkeyup="value=value.replace(/[W]/g,'')"
+          onkeydown="if(event.keyCode==13)event.keyCode=9"
+          style="ime-mode:disabled"
+          maxlength="20"
+        />
+      </label>
 
-    <input class='submitButton' type='submit' value='ok'/>
+      <input class='submitButton' type='submit' value='ok'/>
     </form>
   </div>
 </body>

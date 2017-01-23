@@ -1,12 +1,25 @@
+<html>
+<head>
+  <link rel='stylesheet' type='text/css' href='/media/styles/main.css' />
+</head>
+<body>
+  {% csrf_token %}
+  <div class="form">
+    <h3>请您上传私人定制发布所要展示的图片和文字：</h3>
+    <form action="/lookpubjpg/" enctype="multipart/form-data"  method="POST">
+      <input type='hidden' name='user' value='{{request.user}}' >
+      <label class="inputLabel">
+        <span>请选择个人展示图片：</span>
+        <input type='file' name='advimage' >
+      </label>
 
+      <label class="inputLabel">
+        <span>请填写介绍文字：</span>
+        <input type='text' name='advtext' maxlength="100" />
+      </label>
 
-
-
-{% csrf_token %}
-请您上传私人定制发布所要展示的图片和文字：
-<form action="/lookpubjpg/" enctype="multipart/form-data"  method="POST">
-<input type='hidden' name='user' value='{{request.user}}' >
-请选择个人展示图片：<input type='file' name='advimage' >
-请填写介绍文字：<input type='text' name='advtext' maxlength="100" />
-<input type="submit" value="ok"/>
-</form>
+      <input class='submitButton' type="submit" value="ok"/>
+    </form>
+  </div>
+</body>
+</html>

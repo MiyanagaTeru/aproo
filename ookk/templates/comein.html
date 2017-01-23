@@ -1,6 +1,6 @@
 <html>
 <head>
-  <link rel='stylesheet' type='text/css' href='media/styles/main.css' />
+  <link rel='stylesheet' type='text/css' href='/media/styles/main.css' />
 </head>
 <body>
   <div class='header'>
@@ -17,6 +17,24 @@
   <div class='newPub'>
     <h2>最新发布</h2>
     <div>
+      <div class='more_new'>
+        <a href="/comein_more1/">更多最新发布</a>
+        <a href="/comein_more2/">更多排行榜内容</a>
+        <a href="/c_rdht/">热点话题</a>
+        <a href="/c_txds/">天下大势</a>
+        <a href="/c_ylbg/">娱乐八卦</a>
+        <a href="/c_shzh/">生活智慧</a>
+        <a href="/c_ttxs/">天天向上</a>
+        <a href="/c_tglj/">谈古论今</a>
+        <a href="/c_jtgw/">鸡汤感悟</a>
+        <a href="/c_jsxx/">健身休闲</a>
+      </div>
+
+      <form class='homeSearch' action="/search/"  method="GET">
+        <input type="text" name="subject"/>
+        <input type="submit" value="搜索"/>
+      </form>
+
       {% for qs in queryset %}
         <div class="brief">
           <h4 class='briefTitle'>{{qs.subject}}</h4>
@@ -51,18 +69,3 @@
 </body>
 </html>
 
-<a href="/comein_more1/">更多最新发布</a>
-<a href="/comein_more2/">更多排行榜内容</a>
-<a href="/c_rdht/">热点话题</a>
-<a href="/c_txds/">天下大势</a>
-<a href="/c_ylbg/">娱乐八卦</a>
-<a href="/c_shzh/">生活智慧</a>
-<a href="/c_ttxs/">天天向上</a>
-<a href="/c_tglj/">谈古论今</a>
-<a href="/c_jtgw/">鸡汤感悟</a>
-<a href="/c_jsxx/">健身休闲</a>
-<form action="/search/"  method="GET">
-  搜索<input type="text" name="subject"/>
-
-<input type="submit" value="ok"/>
-</form>
