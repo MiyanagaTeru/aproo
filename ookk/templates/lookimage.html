@@ -1,26 +1,28 @@
 <html>
+<head>
+	<title>{% block title %}{{aff.subject}} {% endblock %}</title>
+	<link rel='stylesheet' type='text/css' href='/media/styles/main.css' />
+</head>
+<body>
 {% csrf_token %}
 {% load static %}
 {% csrf_token %}
 {% for aff in ff %}
-<head><title>
-{% block title %}{{aff.subject}} {% endblock %} </title> </head>
-<body>
-{{aff.content}} </body>
-{{aff.counter}}
-{{pub.advtext}}
-{{pub.advcounter}}
-<img src="{{aff.pimageA.url }}"  height="200"  width="300">
+	<div class='content'>{{aff.content}}</div>
+	<div>次数{{aff.counter}}</div>
+	{{pub.advtext}}
+	{{pub.advcounter}}
+	<img src="{{aff.pimageA.url }}" class='image'>
 
-
- <form action="/release_r/"  method="GET">
-<input type='hidden' name='pk' value={{aff.pk}} />
-<input type='hidden' name='subject' value={{aff.subject}} />
-<input type='hidden' name='content' value={{aff.content}} />
-<input type='hidden' name='pimageA' value={{aff.imageA}} />
-<input type='hidden' name='advtext' value={{pub.advtext}} />
-请输入用户名：<input type='text' name='username' />
-<input type="submit" value="私人定制发布"/>
-</form>
+ 	<form action="/release_r/"  method="GET">
+		<input type='hidden' name='pk' value={{aff.pk}} />
+		<input type='hidden' name='subject' value={{aff.subject}} />
+		<input type='hidden' name='content' value={{aff.content}} />
+		<input type='hidden' name='pimageA' value={{aff.imageA}} />
+		<input type='hidden' name='advtext' value={{pub.advtext}} />
+		请输入用户名：<input type='text' name='username' />
+		<input type="submit" value="私人定制发布"/>
+	</form>
 {% endfor %}
+</body>
 </html>

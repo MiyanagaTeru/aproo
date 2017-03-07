@@ -1,10 +1,15 @@
 <html>
-{% csrf_token %}
-{% load static %}
+<head>
+	<title>个人资料</title>
+	<link rel='stylesheet' type='text/css' href='/media/styles/main.css' />
+</head>
+<body>
+	{% csrf_token %}
+	{% load static %}
 
-{{ap.user.username}}
-{{ap.advtext}}
+	<div>{{ap.user.username}}</div>
+	<div>{{ap.advtext}}</div>
 
-<img src="{{ap.advimage.url }}"  height="200"  width="300">
-
+	<img src="{{ap.advimage.url }}" class='image'>
+</body>
 </html>

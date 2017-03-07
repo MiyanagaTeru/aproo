@@ -18,8 +18,6 @@
     <h2>最新发布</h2>
     <div>
       <div class='more_new'>
-        <a href="/comein_more1/">更多最新发布</a>
-        <a href="/comein_more2/">更多排行榜内容</a>
         <a href="/c_rdht/">热点话题</a>
         <a href="/c_txds/">天下大势</a>
         <a href="/c_ylbg/">娱乐八卦</a>
@@ -37,7 +35,7 @@
 
       {% for qs in queryset %}
         <div class="brief">
-          <h4 class='briefTitle'>{{qs.subject}}</h4>
+          <div class='briefTitle'>{{qs.subject}}</div>
           <div class='toRight'>
             <div class='briefTime'>{{qs.pubdate|date:'n-j'}}</div>
             <form class='actions' action='/readcontent/' method='GET'>
@@ -48,13 +46,14 @@
         </div>
         {% endfor %}
     </div>
+    <a href="/comein_more1/">更多最新发布</a>
   </div>
   <div class='board'>
     <h2>排行榜</h2>
     <div>
       {% for ts in topset %}
       <div class='brief'>
-        <h4 class='briefTitle'>{{ts.subject}}</h4>
+        <div class='briefTitle'>{{ts.subject}}</div>
         <div class='toRight'>
           <div class='briefTime'>{{ts.pubdate|date:'n-j'}}</div>
           <form class='actions' action='/readcontent/' method='GET'>
@@ -65,6 +64,7 @@
       </div>
       {% endfor %}
     </div>
+    <a href="/comein_more2/">更多排行榜内容</a>
   </div>
 </body>
 </html>

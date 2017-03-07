@@ -1,19 +1,25 @@
 <html>
-{% csrf_token %}
-{% load static %}
-{% csrf_token %}
-
-
-标题：{{pp.subject}}
-<img src="{{pp.pimageA.url }}"  height="200"  width="300">
-正文：{{pp.content}}
-
-帖子阅读：{{pp.counter}}
-{{pub.advtext}}
-<img src="{{pub.advimage.url }}"  height="200"  width="300">
-
-广告曝光：{{pub.advcounter}}
-<a href="/comein/"><img src="/media/static/linyun.jpg"  height="150"  width="300"></a>
-
-
+<head>
+	<title>定制发布</title>
+	<link rel='stylesheet' type='text/css' href='/media/styles/main.css' />
+</head>
+<body>
+	{% csrf_token %}
+	{% load static %}
+	{% csrf_token %}
+	<h3>{{pp.subject}}</h3>
+	<img src="{{pp.pimageA.url }}" class='image'>
+	<div class='content'>
+		{{pp.content}}
+	</div>
+	<div>帖子阅读：{{pp.counter}}</div>
+	<div>{{pub.advtext}}</div>
+	<img src="{{pub.advimage.url }}" class='image'>
+	<div>广告曝光：{{pub.advcounter}}</div>
+	<div>
+		<a href="/comein/">
+			<img src="/media/static/linyun.jpg" class='image'>
+		</a>
+	</div>
+</body>
 </html>
